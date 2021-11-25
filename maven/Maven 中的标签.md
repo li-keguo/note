@@ -5,13 +5,7 @@ You must obtain a token from Trello for your user and place it in file [ ~/.wrk/
 Wrk's key to use when obtaining your token is 8d56bbd601877abfd13150a999a840d0
 For example, to give wrk read/write access; use url:
 
-BigBadyHmily1314
 
-
-trello password:
-vJ4Bj6rCxbahWrc
-
-84ee3ba677ff94d69876bbc132f899b789aede8421aa71608b2fb61514a896de
 
 ##### scope
 
