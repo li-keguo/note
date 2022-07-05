@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatis.generator.mapper.XmConsumerMapper">
+  <resultMap id="BaseResultMap" type="com.example.mybatis.generator.po.XmConsumer">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="consumer_id" jdbcType="BIGINT" property="consumerId" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="login_password" jdbcType="VARCHAR" property="loginPassword" />
+    <result column="vip_level" jdbcType="INTEGER" property="vipLevel" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="default_shopping_address" jdbcType="BINARY" property="defaultShoppingAddress" />
+  </resultMap>
+</mapper>
