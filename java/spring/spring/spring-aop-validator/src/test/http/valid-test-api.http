@@ -1,0 +1,16 @@
+### create
+POST http://localhost:8080/valid/create
+Content-Type: application/json
+
+{
+  "name": "name-test",
+  "email": "test@163.com",
+  "phone": "test@163.com",
+  "blogUrl": "test@163.com"
+}
+
+### all
+GET http://localhost:8080/valid/list/all
+Content-Type: application/json
+
+
