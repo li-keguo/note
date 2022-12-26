@@ -15,16 +15,21 @@ public class StringDemo {
         // magic
         exchange(str1, str2);
         System.out.println(str1 + " = " + str2);
+        
+        final String s1 = "I'm s1";
+        final String s2 = "I'm s2";
+        // magic
+        exchange(s1, s2);
+        System.out.println(s1 + " = " + s2);
     }
+    
     
     
     @SuppressWarnings("all")
     public static void exchange(String str1, String str2) {
         try {
             final Field field = getValueField();
-            final char[] chars1 = (char[]) field.get(str1);
-            final char[] chars2 = (char[]) field.get(str2);
-            exchange(chars1, chars2);
+            exchange((char[]) field.get(str1), (char[]) field.get(str2));
         } catch (NoSuchFieldException e) {
             throw new RuntimeException(e);
         } catch (IllegalAccessException e) {
