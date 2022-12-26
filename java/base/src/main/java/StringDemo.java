@@ -10,8 +10,8 @@ import java.security.PrivilegedAction;
 public class StringDemo {
     
     public static void main(String[] args) {
-        final String str1 = "abcde";
-        final String str2 = "fight";
+        String str1 = "abcde";
+        String str2 = "fight";
         // magic
         exchange(str1, str2);
         System.out.println(str1 + " = " + str2);
@@ -21,25 +21,32 @@ public class StringDemo {
     @SuppressWarnings("all")
     public static void exchange(String str1, String str2) {
         try {
-            final Field field = String.class.getDeclaredField("value");
-            AccessController.doPrivileged(new PrivilegedAction<Object>() {
-                @Override
-                public Object run() {
-                    field.setAccessible(true);
-                    return null;
-                }
-            });
+            final Field field = getValueField();
             final char[] chars1 = (char[]) field.get(str1);
             final char[] chars2 = (char[]) field.get(str2);
-            final char[] temp = new char[chars1.length];
-            fill(temp, chars1);
-            fill(chars1, chars2);
-            fill(chars2, temp);
+            exchange(chars1, chars2);
         } catch (NoSuchFieldException e) {
             throw new RuntimeException(e);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         }
+    }
+    
+    @SuppressWarnings("all")
+    private static Field getValueField() throws NoSuchFieldException {
+        final Field field = String.class.getDeclaredField("value");
+        AccessController.doPrivileged((PrivilegedAction<Object>) () -> {
+            field.setAccessible(true);
+            return null;
+        });
+        return field;
+    }
+    
+    private static void exchange(char[] chars1, char[] chars2) {
+        final char[] temp = new char[chars1.length];
+        fill(temp, chars1);
+        fill(chars1, chars2);
+        fill(chars2, temp);
     }
     
     private static void fill(char[] temp, char[] chars1) {
