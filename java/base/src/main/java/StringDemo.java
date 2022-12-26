@@ -29,6 +29,8 @@ public class StringDemo {
         // magic
         exchange(s3, s4);
         System.out.println(s3.toString() + " = " + s4.toString());
+        System.out.println(s3);
+        System.out.println(s4);
     }
     
     
@@ -62,8 +64,6 @@ public class StringDemo {
     }
     
     private static void fill(char[] temp, char[] chars1) {
-        for (int i = 0; i < temp.length; i++) {
-            temp[i] = chars1[i];
-        }
+        System.arraycopy(chars1, 0, temp, 0, temp.length);
     }
 }
