@@ -1,6 +1,7 @@
 import java.lang.reflect.Field;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
+import java.util.Arrays;
 
 /**
  * StringDemo.
@@ -8,6 +9,7 @@ import java.security.PrivilegedAction;
  * @author <a href='mailto:likeguo@apache.org'> likeguo </a>
  */
 public class StringDemo {
+    
     
     public static void main(String[] args) {
         String str1 = "abcde";
@@ -21,8 +23,13 @@ public class StringDemo {
         // magic
         exchange(s1, s2);
         System.out.println(s1 + " = " + s2);
+        
+        final String s3 = "I'm s3";
+        final String s4 = "I'm s4";
+        // magic
+        exchange(s3, s4);
+        System.out.println(s3.toString() + " = " + s4.toString());
     }
-    
     
     
     @SuppressWarnings("all")
