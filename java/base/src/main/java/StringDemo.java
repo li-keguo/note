@@ -1,7 +1,6 @@
 import java.lang.reflect.Field;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-import java.util.Arrays;
 
 /**
  * StringDemo.
@@ -22,7 +21,11 @@ public class StringDemo {
         final String s2 = "I'm s2";
         // magic
         exchange(s1, s2);
+        System.out.println(s1);
+        System.out.println(s2);
         System.out.println(s1 + " = " + s2);
+        System.out.println(s1);
+        System.out.println(s2);
         
         final String s3 = "I'm s3";
         final String s4 = "I'm s4";
