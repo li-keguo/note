@@ -11,7 +11,7 @@ public class StringDemo {
     
     
     public static void main(String[] args) {
-        String str1 = "abcde";
+        String str1 = "abcde33";
         String str2 = "fight";
         // magic
         exchange(str1, str2);
@@ -41,7 +41,8 @@ public class StringDemo {
     public static void exchange(String str1, String str2) {
         try {
             final Field field = getValueField();
-            exchange((char[]) field.get(str1), (char[]) field.get(str2));
+            exchange(field, str1, str2);
+//            exchange((char[]) field.get(str1), (char[]) field.get(str2));
         } catch (NoSuchFieldException e) {
             throw new RuntimeException(e);
         } catch (IllegalAccessException e) {
@@ -57,6 +58,13 @@ public class StringDemo {
             return null;
         });
         return field;
+    }
+    
+    @SuppressWarnings("all")
+    private static void exchange(Field field, String str1, String str2) throws IllegalAccessException {
+        final char[] temp = (char[]) field.get(str1);
+        field.set(str1, (char[]) field.get(str2));
+        field.set(str2, temp);
     }
     
     private static void exchange(char[] chars1, char[] chars2) {
