@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author <a href='mailto:likeguo@apache.org'> likeguo </a>
  */
-public class ConsumerCsvHandler implements CsvRowHandler {
+public class ConsumerCsvHandler implements CsvRowHandler, AutoCloseable {
     
     private final Consumer<CsvRow> consumer;
     
@@ -29,5 +29,10 @@ public class ConsumerCsvHandler implements CsvRowHandler {
     
     private void consume(List<CsvRow> consumer) {
     
+    }
+    
+    @Override
+    public void close() {
+        consume(consumer.consumer());
     }
 }
