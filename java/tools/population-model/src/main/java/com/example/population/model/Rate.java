@@ -13,9 +13,5 @@ public class Rate {
      * 出生率
      */
     private BigDecimal birthRate;
-    
-    /**
-     * 死亡率 mortality rate
-     */
-    private BigDecimal mortalityRate;
+
 }

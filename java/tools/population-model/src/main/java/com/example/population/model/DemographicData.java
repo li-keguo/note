@@ -18,4 +18,10 @@ public class DemographicData {
      * 人口数据
      */
     private List<Demographic> data;
+    
+    
+    /**
+     * 比率
+     */
+    private Rate rate;
 }

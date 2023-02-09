@@ -1,5 +1,7 @@
 package com.example.population.model;
 
+import java.math.BigDecimal;
+
 /**
  * Demographic.
  *
@@ -22,10 +24,12 @@ public class Demographic {
      */
     private Sex sex;
     
+    
     /**
-     * 比率
+     * 死亡率 mortality rate
      */
-    private Rate rate;
+    private BigDecimal mortalityRate;
+    
     
     
     public static enum Sex {
