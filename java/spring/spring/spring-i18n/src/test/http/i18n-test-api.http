@@ -1,0 +1,21 @@
+
+### create
+POST http://localhost:8080/i18n/message
+Content-Type: application/json
+Accept-Language: zh-CN
+
+{
+  "name": "name-test",
+  "email": "test@163.com",
+  "phone": "test@163.com",
+  "blogUrl": "http://www.test.com/abc"
+}
+
+
+### error
+POST http://localhost:8080/i18n/error
+Content-Type: application/json
+Accept-Language: zh-CN
+
+
+

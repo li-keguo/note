@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+spring:
+  messages:
+    basename: message/i18n
+  application:
+    name: spring-i18n-demo
+
