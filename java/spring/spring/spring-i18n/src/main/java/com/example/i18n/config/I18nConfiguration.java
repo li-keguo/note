@@ -20,7 +20,11 @@ public class I18nConfiguration {
     @Bean
     public LocaleResolver localeResolver() {
         final AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
-        localeResolver.setSupportedLocales(Stream.of(Locale.US, Locale.SIMPLIFIED_CHINESE).collect(Collectors.toList()));
+        // 添加支持的国际化消息
+        localeResolver.setSupportedLocales(Stream.of(
+                        Locale.US,
+                        Locale.SIMPLIFIED_CHINESE)
+                .collect(Collectors.toList()));
         return localeResolver;
     }
     

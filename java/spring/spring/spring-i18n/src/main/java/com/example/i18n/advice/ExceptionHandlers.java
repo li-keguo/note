@@ -32,8 +32,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ExceptionHandlers {
     
-    @Autowired
-    private  MessageSource messageSource;
+    private final MessageSource messageSource;
     
     @ExceptionHandler(I18nException.class)
     protected ApiResult<Object> handleExceptionHandler(final I18nException exception) {
