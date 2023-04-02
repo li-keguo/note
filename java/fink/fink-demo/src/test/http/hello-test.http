@@ -1,0 +1,6 @@
+### say
+GET http://localhost:8080/hello/say
+Content-Type: application/json
+### get
+GET http://localhost:8080/hello/get/data
+Content-Type: application/json

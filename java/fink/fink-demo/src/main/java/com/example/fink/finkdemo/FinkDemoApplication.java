@@ -17,12 +17,9 @@ import java.util.Map;
 @SpringBootApplication
 public class FinkDemoApplication {
     
-    public static void main(String[] args) throws Exception {
-        //创建执行环境
-       
+    public static void main(String[] args) {
         SpringApplication.run(FinkDemoApplication.class, args);
-
     }
-
+    
     
 }
