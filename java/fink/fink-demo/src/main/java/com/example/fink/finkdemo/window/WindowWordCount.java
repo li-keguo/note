@@ -10,7 +10,9 @@ import org.apache.flink.util.Collector;
 
 /**
  * WindowWordCount<br>
- * the terminal run :nc -lk 9999
+ * the terminal run :nc -lk 9999 <br>
+ * <a href="https://www.runoob.com/linux/linux-comm-nc.html">nc command</a>
+ * <a href="https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/dev/datastream/overview/">demo from</a>
  */
 public class WindowWordCount {
     
