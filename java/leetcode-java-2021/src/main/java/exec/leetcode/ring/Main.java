@@ -28,36 +28,39 @@ public class Main {
         c.add(e);
         c.add(a);
         
-        print(a, a, 0, new HashSet<>());
+        plan(a, a, 0, new HashSet<>());
         for (List<String> s : results) {
             System.out.println(s);
         }
     }
     
-    static int i = 0;
+    static int resultSize = 0;
     
     static List<List<String>> results = new ArrayList<>();
     
-    public static Set<Integer> print(Node node, Node firstnode, int dep, Set<Node> route) {
+    public static Set<Integer> plan(Node node, Node firstNode, int dep, Set<Node> router) {
         if (node.child.isEmpty()) {
             return null;
         }
-        if ((dep > 0 && node == firstnode)) {
+        if ((dep > 0 && node == firstNode)) {
+            // 完整环
             final ArrayList<String> list = new ArrayList<>();
             list.add(node.vale);
             results.add(list);
             Set<Integer> set = new HashSet<>();
-            set.add(i);
-            i++;
+            set.add(resultSize);
+            resultSize++;
             return set;
         }
-        if (route.contains(node) && node != firstnode) {
+        if (router.contains(node) && node != firstNode) {
+            // 中间环
             return null;
         }
-        route.add(node);
+        
+        router.add(node);
         Set<Integer> set = new HashSet<>();
         for (Node n : node.child) {
-            final Set<Integer> s = print(n, firstnode, dep + 1, route);
+            final Set<Integer> s = plan(n, firstNode, dep + 1, router);
             if (s == null) {
                 continue;
             }
