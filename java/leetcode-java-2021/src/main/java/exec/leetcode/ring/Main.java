@@ -27,18 +27,33 @@ public class Main {
         
         c.add(e);
         c.add(a);
+        planing(a);
+        planing(b);
+        planing(c);
+        planing(d);
+        planing(e);
         
-        plan(a, a, 0, new HashSet<>());
-        for (List<String> s : results) {
-            System.out.println(s);
-        }
     }
     
-    static int resultSize = 0;
+    private static void planing(Node a) {
+        final Plan plan = new Plan();
+        plan.plan(a, a, 0, new HashSet<>());
+        System.out.printf(" 从 %s 开始规划\n", a.vale);
+        for (List<String> s : plan.results) {
+            System.out.println(s);
+        }
+        System.out.println();
+    }
     
-    static List<List<String>> results = new ArrayList<>();
     
-    public static Set<Integer> plan(Node node, Node firstNode, int dep, Set<Node> router) {
+}
+
+class Plan {
+    int resultSize = 0;
+    
+    List<List<String>> results = new ArrayList<>();
+    
+    public Set<Integer> plan(Node node, Node firstNode, int dep, Set<Node> router) {
         if (node.child.isEmpty()) {
             return null;
         }
