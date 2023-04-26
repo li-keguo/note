@@ -1,4 +1,4 @@
-package cn.leaf.exercise.multi.datasource.demo;
+package cn.leaf.exercise.multi.datasource.starter;
 
 import cn.leaf.exercise.multi.datasource.repository.mapper.XmShoppingOrderMapper;
 import cn.leaf.exercise.multi.datasource.model.po.XmShoppingOrder;
