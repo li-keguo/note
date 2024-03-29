@@ -1,6 +1,11 @@
+package exec.leetcode;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
+/**
+*  https://leetcode.cn/problems/valid-parenthesis-string/description/
+*/
 public class L678_ValidParentheses {
 
     public boolean checkValidString(String s) {
