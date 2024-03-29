@@ -42,4 +42,29 @@ public class L678_ValidParentheses {
 
         return leftStack.isEmpty();
     }
+
+    public boolean checkValidString2(String s) {
+        char[] arr = s.toCharArray();
+        int min = 0;
+        int max = 0;
+        for (char code : arr) {
+            if (code == '(') {
+                min++;
+                max++;
+                continue;
+            }
+            if (code == ')') {
+                min = Math.max(min - 1, 0);
+                max--;
+                if (max < 0) {
+                    return false;
+                }
+            }
+            if (code == '*') {
+                min = Math.max(min - 1, 0);
+                max++;
+            }
+        }
+        return min == 0;
+    }
 }
