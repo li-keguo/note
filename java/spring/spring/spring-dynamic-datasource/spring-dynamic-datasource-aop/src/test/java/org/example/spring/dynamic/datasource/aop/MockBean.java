@@ -1,9 +1,14 @@
 package org.example.spring.dynamic.datasource.aop;
 
+import lombok.RequiredArgsConstructor;
+
 /**
  * The type Mock bean.
  */
-public record MockBean(String name) {
+@RequiredArgsConstructor
+public class MockBean {
+
+    private final String name;
 
     /**
      * Invoke none string.
