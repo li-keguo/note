@@ -2,9 +2,7 @@ package org.example.spring.dynamic.datasource.aop.aop;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
-import org.aspectj.lang.annotation.Aspect;
 import org.springframework.core.annotation.AnnotatedElementUtils;
-import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -16,8 +14,6 @@ import java.lang.reflect.Type;
  *
  * @param <T> the type parameter
  */
-@Aspect
-@Component
 public abstract class MergedAnnotationMethodAdviceApiInterceptor<T extends Annotation> implements MethodInterceptor {
 
 
