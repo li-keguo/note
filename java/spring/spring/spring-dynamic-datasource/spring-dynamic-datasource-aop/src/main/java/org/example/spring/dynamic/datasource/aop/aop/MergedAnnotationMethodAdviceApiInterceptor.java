@@ -66,7 +66,7 @@ public abstract class MergedAnnotationMethodAdviceApiInterceptor<T extends Annot
         if (annotation != null) {
             return annotation;
         }
-        return AnnotatedElementUtils.findMergedAnnotation(method.getClass(), mergedAnnotation());
+        return AnnotatedElementUtils.findMergedAnnotation(method.getDeclaringClass(), mergedAnnotation());
     }
 
 }
